@@ -1,13 +1,21 @@
 import React from 'react';
 import styles from '../../style/style.css';
 
-const Marker = () => {
-  return (
-    <div className={styles.markerContainer}>
-      <div className={styles.marker}/>
-      <div className={styles.markerPointer}/>
-    </div>
-  );
+class Marker extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className={styles.markerContainer}>
+ 
+        <div 
+          className={styles.marker}>Hello</div>
+        <div className={styles.markerPointer}/>
+      </div>
+    );
+  }
 };
 
 export default Marker;

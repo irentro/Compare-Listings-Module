@@ -1,7 +1,5 @@
 import React from 'react';
-import MockData from '../../../database/mockdata.js';
 import styles from '../../style/style.css';
-import MapContainer from './Map2.jsx';
 import ModalIndex from './ModalIndex.jsx';
 
 class App extends React.Component {
@@ -9,7 +7,6 @@ class App extends React.Component {
     super() 
 
     this.state = {
-      data: MockData,
       addedToCompare: false,
       compareModalView: false
     }
@@ -22,12 +19,10 @@ class App extends React.Component {
     this.setState({
       addedToCompare: !this.state.addedToCompare
     });
-    console.log('state', this.state.addedToCompare)
   }
 
+  
   render() {
-    const buttonState = this.state.addedToCompare;
-
     return (
       <div>
         <div className={styles.mainButtonContainer}>
@@ -45,8 +40,8 @@ class App extends React.Component {
           }
         </div>
         {this.state.addedToCompare ? 
-          <ModalIndex  data={this.state.data}/> : console.log('ModelIndex turned off')}
-        <MapContainer />
+          <ModalIndex /> : console.log('ModelIndex turned off')
+        }
       </div>
     )
   }

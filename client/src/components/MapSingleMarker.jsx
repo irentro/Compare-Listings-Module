@@ -6,8 +6,8 @@ import Marker from './Marker.jsx';
 
 
 class MapContainer extends React.Component {
-  constructor() {
-    super() 
+  constructor(props) {
+    super(props) 
     this.state = {
       center: {
         lat: 34.025031,
@@ -15,6 +15,7 @@ class MapContainer extends React.Component {
       },
       zoom: 16
     }
+    console.log('MapContainer', this.props)
   }
 
   render() {
@@ -25,11 +26,22 @@ class MapContainer extends React.Component {
           defaultCenter={this.state.center}
           defaultZoom={this.state.zoom}
         >
-          <Marker
-            lat={34.025031}
-            lng={-118.487642}
-            text="My Marker"
-          />
+
+            <Marker
+              lat={this.state.center.lat} 
+              lng={this.state.center.lng}
+              text="My Marker"
+            />                     
+
+
+          {/* {this.props.data.map(item => {
+            <Marker
+              positions={{lat:item.lat, lng:item.lng}}
+              key={item.lat}
+              text="My Marker"
+            /> 
+          })} */}
+
         </GoogleMapReact>
       </div>
     );
@@ -38,3 +50,11 @@ class MapContainer extends React.Component {
  
 export default MapContainer;
 
+// {this.props.data.map(item => {
+//   <Marker
+//     positions={{lat:item.lat, lng:item.lng}}
+//     lat={item.lat}
+//     lng={item.lng}
+//     text="My Marker"
+//   /> 
+// })}
