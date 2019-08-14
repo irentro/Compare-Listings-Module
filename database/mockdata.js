@@ -2,7 +2,7 @@ const places =
 [
   {
     id: 1,
-    title: `Gr8 Location, 3 Beds w/ Private Bath!`,
+    title: `Private Pool House with amazing views!`,
     imageUrl: `https://rentro-listing.s3-us-west-1.amazonaws.com/image1.jpg`,
     roomType: 'Entire Place',
     city: 'Los Angeles',
@@ -29,7 +29,7 @@ const places =
   },
   {
     id: 2,
-    title: 'Lovely Home, Super Central Location',
+    title: 'Lovely Home, Super Central Location, great views!',
     imageUrl: `https://rentro-listing.s3-us-west-1.amazonaws.com/image2.jpg`,
     roomType: 'Entire Place',
     city: 'Los Angeles',
@@ -92,8 +92,8 @@ const places =
     favorited: false,
     votes: 3,
     amenities: `Wifi • Kitchen`,
-    lat: 34.023523,
-    lng: -118.486688,
+    lat: 34.025655,
+    lng: -118.484064,
     comments:[]
   },
   {

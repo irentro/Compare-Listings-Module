@@ -72,20 +72,39 @@
   overflow: scroll
 }
 
+.modalContainer {
+  overflow: hidden;
+}
+
 /* Section Head */
 .modalSectionHead {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-style: solid;
+  border-width: .75px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-color: rgba(0, 0, 0, 0.2);  
+  z-index: 30;
+}
+
+.modalSectionHeadInner {
   position: relative;
   border-style: solid;
   border-width: .75px;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);  
 }
+
 .modalContainerHead {
   width: 1154px;
-  height: 60px;
+  height: 50px;
   margin: auto;
+  align-items: center;
 }
 
 .sectionHeader {
@@ -101,7 +120,7 @@
 .iconXcontainer {
   position: fixed;
   margin-right: 45px;
-  margin-top: 10px;
+  margin-top: 5px;
   right: 0;
   top: 0;
   width: 40px;
@@ -110,7 +129,7 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   cursor: pointer;
-  z-index: 15;
+  z-index: 40;
 }
 
 .iconX {
@@ -127,6 +146,7 @@
 
 /* Section Filters */
 .modalSectionFilters {
+  margin-top: 50px;
   border-style: solid;
   border-width: .75px;
   border-top: 0px;
@@ -161,21 +181,259 @@
   outline: none
 }
 
-/* Section List */
-.modalSectionList {
-  padding-top: 18px;
+.filterButtonFilled {
+  height: 30px;
+  font-size: 14px;
+  font-weight: 200;
+  margin-right: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  border-radius: 3px;
+  background-color: #008489;
+  border-color: #008489;
+  cursor: pointer;
+  outline: none
+}
+.collaborateContainer {
+  display: flex;
+  float: right;
+  max-height: 30x;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.avatarContainer {
+  display: flex;
+  float: left;
+  margin-right: 90px;
+}
+
+.iconAvatar {
+  margin-left: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+.iconComment {
+  margin-right: 5px;
+  width: 30px;
+  cursor: pointer  
+}
+
+/* Price */
+.priceModalBackground {
+  opacity: 0.6;
+  background-color: white;
+  position: fixed;
+  z-index: 35;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+
+.priceModalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 350px;
+  height: 175px;
+  text-align: left;
+  border-radius: 3px;
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
   border-width: .75px;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 40
+}
+
+.priceLabel {
+  font-size: 14px;
+  line-height: 18px; 
+  font-weight: 400;
+  margin-bottom: 40px
+}
+
+.priceRangeContainer {
+  margin-top: 40px
+}
+
+.priceValueContainer {
+  display: flex;
+  align-items: center;
+  height: 40px
+}
+
+.priceOutputContainer {
+  margin-top: 80px;
+  width: 60px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #484848;
+  border-width: .5px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #484848; 
+}
+
+.priceSave {
+  float: right;
+  padding-top: 75px;
+  padding-left: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #008489;
+  cursor: pointer
+}
+
+/* Chat */
+.chatModalContainer {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, -50%);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 400px;
+  height: 620px;
+  background-color: white;
   border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: .75px;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 60
+}
+
+.iconXcontainerSmall {
+  float: right;
+  width: 24px;
+  cursor: pointer;
+}
+
+.formWrapper {
+  margin-top: 0px;
+  width: 400px;
+}
+
+.formField {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 26px;
+  color: #484848;
+  width: 100%;
+  height: 90px;
+  margin-top: 15px;
+  border-width: .5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  cursor: auto;
+  outline: none
+}
+
+.formCreate {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 14px;
+  width: 100px;
+  height: 30px;
+  border-width: 1px;
+  color: #008489;
+  border-color: #008489;
+  border-radius: 4px;
+  float: right;
+  cursor: pointer;
+  outline: none
+}
+
+.chatArea {
+  overflow: auto;
+  width: 400px;
+  height: 435px;
+}
+
+.msgContainer {
+  background-color: white;
+  float: right;
+  text-align: left;
+  margin-left: 18px;
+  width: 100%;
+  border-width: .5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.msgOuterContainer {
+  display: flex;
+  margin-top: 15px;
+}
+
+.msgAvatar {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px
+}
+
+.msgName {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 100;
+  color: #484848;
+}
+
+.msgText {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 26px;
+  color: #484848;
+  float: left;
+}
+
+.msgTextTimeStamp {
+  width: 100%;
+  padding-top: 16px;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 26px;
+  color: #484848;
+  float: left; 
+}
+
+/* Section List */
+.modalSectionList {
+  padding-top: 35px;
+  overflow: hidden;
 }
 
 .modalContainerList {
   width: 1154px;
   display:flex;
   margin: auto;
+  margin-bottom: 120px;
   text-align: left;
   
 }
@@ -191,12 +449,6 @@
   display: flex;
   position: relative;
   overflow: hidden;
-  border-style: solid;
-  border-width: .75px;
-  border-top: 0px;
-  border-bottom: 0px;
-  border-right: 0px;
-  border-color: #008489;
 }
 
 .leftArrow {
@@ -218,14 +470,16 @@
 }
 
 .labelList {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   padding-bottom: 18px
 }
 
 .listFixedContainer {
   text-align: left;
-  position: relative
+  position: relative;
+  margin-right: 5px;
+
 }
 
 .listFixed {
@@ -233,12 +487,13 @@
   position: relative;
   border-style: solid;
   border-width: .75px;
-  border-color: #008489 
+  border-color: #008489;
 }
 
 .listCards {
   width: 330px;
   position: relative;
+  margin-right: 5px;
 }
 
 .heartClick {
@@ -269,7 +524,21 @@
   display: flex;
   align-items: center;
   height: 45px;
-  background-color: #F6F6F6
+  background-color: #F6F6F6;
+}
+
+.listRowShadeFixed {
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  height: 45px;
+  background-color: #F6F6F6;
+  border-style: solid;
+  border-width: .75px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-color: #008489;
 }
 
 .listItemImage {
@@ -316,6 +585,24 @@
   line-height: 18px; 
   font-weight: 600;
   padding-bottom: 3px;
+}
+
+.listItemPriceLess {
+  font-size: 14px;
+  line-height: 18px; 
+  font-weight: 400;
+  color: #026C70;
+  padding-bottom: 3px;
+  padding-left: 15px;
+}
+
+.listItemPriceMore {
+  font-size: 14px;
+  line-height: 18px; 
+  font-weight: 400;
+  color: #FF666A;
+  padding-bottom: 3px;
+  padding-left: 15px;
 }
 
 .bookButton {
@@ -376,6 +663,47 @@
 }
 
 /* Google Map Styles */
+.modalInnerWrapper {
+  z-index: 50;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.iconMapCaret {
+  margin: auto;
+  padding-top: 10px;
+  width: 18px;
+  cursor: pointer
+}
+
+.iconMapCaretContainer {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor: pointer;
+}
+
+.mapLabel {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+
+.mapLabelText {
+  padding-top: 15px;
+  font-size: 14px;
+  line-height: 18px; 
+  font-weight: 600;
+  color:#008489;
+  padding-bottom: 3px;
+}
+
 .mapContainer {
   width: 100%;
   text-align: center

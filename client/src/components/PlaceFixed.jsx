@@ -6,14 +6,26 @@ class PlaceFixed extends React.Component {
     super(props)
 
     this.handleLikeItem = this.handleLikeItem.bind(this);
+    this.handleHoverIn=this.handleHoverIn.bind(this);
   }
 
   handleLikeItem(e) {
     this.props.like(e.target.getAttribute('name'));
   }
 
+  handleHoverIn(value) {
+    this.props.hover(value)
+  }
 
   render() {
+    let targetPrice = this.props.targetPrice;
+    let savedItems = this.props.current;
+    let priceDifObj = {};
+
+    for(var i = 0; i < savedItems.length; i++) {
+      let difference = targetPrice - Number(savedItems[i].price);
+      priceDifObj[savedItems[i].id] = difference;
+    }
 
     return(
       <div className={styles.listFixedContainer}>
@@ -23,8 +35,10 @@ class PlaceFixed extends React.Component {
           {this.props.current.map(item =>
             <div 
               className={styles.listFixed}
-              key={item.id}>
-      
+              key={item.id}
+              name={item.id}
+              onMouseEnter={() => {this.handleHoverIn(item.id)}}
+              >     
               <div 
                 className={styles.heartClick}
                 name={item.id}>
@@ -36,32 +50,39 @@ class PlaceFixed extends React.Component {
               <img
                 className={styles.listItemImage}
                 src={item.imageUrl}        
-              />
-
-              <div 
-                className={styles.listItemDetailWrapper}>
-                <div className={styles.listItemCategory}>
+              />            
+                <div 
+                  className={styles.listItemDetailWrapper} >
+                  <div className={styles.listItemCategory}>
+                    <div>
+                      {item.roomType}
+                    </div>
+                    <div className={styles.listItemCity}>
+                      {item.city}
+                    </div>
+                  </div>
+                  <div className={styles.listItemTitle}>
+                    {item.title}
+                  </div>
+                  {item.availability ? 
+                    <button className={styles.bookButton}>Book</button> :
+                    <button className={styles.unavailableButton}>Unavailable</button>
+                  }
+                </div>
+                <div className={styles.listRowShadeFixed}>
+                  <div className={styles.listItemPrice}>
+                    {`$${item.price}/night`}
+                  </div>
                   <div>
-                    {item.roomType}
+                    {priceDifObj[item.id] > 0 ?
+                    <div className={styles.listItemPriceLess}>
+                      {`-$${priceDifObj[item.id]} less than budget`} 
+                    </div> :
+                    <div className={styles.listItemPriceMore}>
+                      {`+$${Math.abs(priceDifObj[item.id])} more than budget`}
+                    </div>}
                   </div>
-                  <div className={styles.listItemCity}>
-                    {item.city}
-                  </div>
                 </div>
-                <div className={styles.listItemTitle}>
-                  {item.title}
-                </div>
-                {item.availability ? 
-                  <button className={styles.bookButton}>Book</button> :
-                  <button className={styles.unavailableButton}>Unavailable</button>
-                }
-              </div>
-
-              <div className={styles.listRowShade}>
-                <div className={styles.listItemPrice}>
-                  {`$${item.price}/night`}
-                </div>
-              </div>
               <div className={styles.listRow}>
                 <div className={styles.listItemReviewWrapper}>
                   <div className={styles.listItemStarWrapper}>
@@ -86,7 +107,7 @@ class PlaceFixed extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className={styles.listRowShade}>
+              <div className={styles.listRowShadeFixed}>
                 <div className={styles.listItem}>
                   {item.amenities}
                 </div>
@@ -96,7 +117,7 @@ class PlaceFixed extends React.Component {
                   {`${item.guests} guests max`}
                 </div>
               </div>              
-              <div className={styles.listRowShade}>
+              <div className={styles.listRowShadeFixed}>
                 <div className={styles.listItem}>
                   {`${item.bedrooms} bedrooms • ${item.beds} • ${item.baths} baths`}
                 </div>
@@ -122,7 +143,6 @@ class PlaceFixed extends React.Component {
               </div>  
             </div>
           )}
-
       </div>
 
     )
