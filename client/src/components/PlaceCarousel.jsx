@@ -6,12 +6,17 @@ class PlaceCarousel extends React.Component {
     super(props)
 
     this.handleLikeItem = this.handleLikeItem.bind(this);
+    this.handleHoverIn=this.handleHoverIn.bind(this);
+
   }
 
   handleLikeItem(e) {
     this.props.like(e.target.getAttribute('name'));
   }
 
+  handleHoverIn(value) {
+    this.props.hover(value)
+  }
 
   render() {
     const x = this.props.position;
@@ -20,6 +25,15 @@ class PlaceCarousel extends React.Component {
       transform: `translateX(${x}px)`
     }
 
+    let targetPrice = this.props.targetPrice;
+    let savedItems = this.props.data;
+    let priceDifObj = {};
+
+    for(var i = 0; i < savedItems.length; i++) {
+      let difference = targetPrice - Number(savedItems[i].price);
+      priceDifObj[savedItems[i].id] = difference;
+    }
+    
     return(
       <div className={styles.listCarouselContainer}>
         <div className={styles.labelList}>
@@ -31,8 +45,9 @@ class PlaceCarousel extends React.Component {
               className={styles.listCards}
               key={item.id}
               style={position}
+              name={item.id}
+              onMouseEnter={() => {this.handleHoverIn(item.id)}}
               >
-      
               <div 
                 className={styles.heartClick}
                 name={item.id}>
@@ -45,7 +60,6 @@ class PlaceCarousel extends React.Component {
                 className={styles.listItemImage}
                 src={item.imageUrl}        
               />
-
               <div 
                 className={styles.listItemDetailWrapper}>
                 <div className={styles.listItemCategory}>
@@ -64,10 +78,18 @@ class PlaceCarousel extends React.Component {
                   <button className={styles.unavailableButton}>Unavailable</button>
                 }
               </div>
-
               <div className={styles.listRowShade}>
                 <div className={styles.listItemPrice}>
                   {`$${item.price}/night`}
+                </div>
+                <div>
+                  {priceDifObj[item.id] > 0 ?
+                  <div className={styles.listItemPriceLess}>
+                    {`-$${priceDifObj[item.id]} less than budget`} 
+                  </div> :
+                  <div className={styles.listItemPriceMore}>
+                    {`+$${Math.abs(priceDifObj[item.id])} more than budget`}
+                  </div>}
                 </div>
               </div>
               <div className={styles.listRow}>
@@ -131,7 +153,6 @@ class PlaceCarousel extends React.Component {
             </div>
           )}
         </div>
-
       </div>
     )
   }
