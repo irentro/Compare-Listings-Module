@@ -5,11 +5,9 @@ import styles from '../../style/style.css';
 class Price extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       values: [145]
     }
-
     this.handleClosePriceModal=this.handleClosePriceModal.bind(this);
     this.handleUpdateTargetPrice=this.handleUpdateTargetPrice.bind(this);
   }  
@@ -77,13 +75,10 @@ class Price extends React.Component {
               onClick={this.handleClosePriceModal}>
               Save
             </div>
-
           </div>
         </div>
         <div className={styles.priceModalBackground}></div>
       </div>
-
-
     )
   }
 }

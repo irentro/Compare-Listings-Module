@@ -4,10 +4,8 @@ import styles from '../../style/style.css';
 class PlaceCarousel extends React.Component {
   constructor(props) {
     super(props)
-
     this.handleLikeItem = this.handleLikeItem.bind(this);
     this.handleHoverIn=this.handleHoverIn.bind(this);
-
   }
 
   handleLikeItem(e) {
@@ -24,11 +22,9 @@ class PlaceCarousel extends React.Component {
       transition: `0.5s`,
       transform: `translateX(${x}px)`
     }
-
     let targetPrice = this.props.targetPrice;
     let savedItems = this.props.data;
     let priceDifObj = {};
-
     for(var i = 0; i < savedItems.length; i++) {
       let difference = targetPrice - Number(savedItems[i].price);
       priceDifObj[savedItems[i].id] = difference;

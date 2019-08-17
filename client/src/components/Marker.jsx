@@ -9,7 +9,6 @@ class Marker extends React.Component {
   render() {
     return (
       <div className={styles.markerContainer}>
- 
         <div 
           className={styles.marker}>Hello</div>
         <div className={styles.markerPointer}/>

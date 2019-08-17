@@ -5,12 +5,10 @@ import ModalIndex from './ModalIndex.jsx';
 class App extends React.Component {
   constructor() {
     super() 
-
     this.state = {
       addedToCompare: false,
       compareModalView: false
     }
-
     this.handleAddtoCompare = this.handleAddtoCompare.bind(this);
   }
 
@@ -20,7 +18,6 @@ class App extends React.Component {
       addedToCompare: !this.state.addedToCompare
     });
   }
-
   
   render() {
     return (
