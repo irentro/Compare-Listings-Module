@@ -6,13 +6,11 @@ import Modal from './Modal.jsx';
 class ModalIndex extends React.Component {
   constructor() {
     super()
-
     this.state = {
       currentPlace: [MockData[0]],
       data: MockData.slice(1),
       compareModalView: false
     }   
-
     this.handleCompareModalView=this.handleCompareModalView.bind(this);
     this.handleLikeItem = this.handleLikeItem.bind(this);
   }

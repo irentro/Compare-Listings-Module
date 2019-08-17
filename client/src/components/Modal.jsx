@@ -88,8 +88,7 @@ class Modal extends React.Component {
       positions={this.state.positionY}
       moveMap={this.handleMoveMap}/>
   }
-
-  
+ 
   render() {
     return (
       <div className={styles.modalContainer}>
@@ -101,7 +100,6 @@ class Modal extends React.Component {
             onClick={this.handleModalView}
             src='https://rentro-icons.s3-us-west-1.amazonaws.com/icon-x.png'/>
         </div>
-
         <div className={styles.modalSectionHead} >
           <div className={styles.modalSectionHeadInner}>
             <div className={styles.modalContainerHead}>
@@ -163,7 +161,6 @@ class Modal extends React.Component {
               </div>
             </div>
           </div>
-
           <div className={styles.modalSectionList}>
             <div className={styles.modalContainerList}>
               <div 

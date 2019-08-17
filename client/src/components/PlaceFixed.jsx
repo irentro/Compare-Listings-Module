@@ -4,7 +4,6 @@ import styles from '../../style/style.css';
 class PlaceFixed extends React.Component {
   constructor(props) {
     super(props)
-
     this.handleLikeItem = this.handleLikeItem.bind(this);
     this.handleHoverIn=this.handleHoverIn.bind(this);
   }
@@ -144,7 +143,6 @@ class PlaceFixed extends React.Component {
             </div>
           )}
       </div>
-
     )
   }
 }
