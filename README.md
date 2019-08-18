@@ -2,8 +2,14 @@
 >
 
 <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare1.gif" width="650" />
+&nbsp;
+
 <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare2.gif" width="650" />
+&nbsp;
+
 <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare3.gif" width="650" />
+&nbsp;
+
 
 ## Development
 ### Installing Dependencies
