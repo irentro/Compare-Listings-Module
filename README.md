@@ -1,6 +1,10 @@
 # Compare and Share
 >
 
+![Related Listings Module](https://github.com/irentro/Compare-Listings-Module/blob/master/Compare1.gif)
+![Related Listings Module](https://github.com/irentro/Compare-Listings-Module/blob/master/Compare2.gif)
+![Related Listings Module](https://github.com/irentro/Compare-Listings-Module/blob/master/Compare3.gif)
+
 ## Development
 ### Installing Dependencies
 From within the root directory:
