@@ -1,13 +1,28 @@
 # Compare and Share
->
+>A comparision module that helps travelers make informed decisions about home rental bookings based on price, location, reviews, and group votes.
 
-<img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare1.gif" width="650" />
+&nbsp;
 &nbsp;
 
-<img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare2.gif" width="650" />
+<p align="center">
+  <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare1.gif" width="650" />
+</p>
+&nbsp;
+&nbsp;
 &nbsp;
 
-<img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare3.gif" width="650" />
+<p align="center">
+  <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare2.gif" width="650" />
+</p>
+&nbsp;
+&nbsp;
+&nbsp;
+
+<p align="center">
+  <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare3.gif" width="650" />
+</p>
+&nbsp;
+&nbsp;
 &nbsp;
 
 
