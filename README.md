@@ -4,6 +4,8 @@
 &nbsp;
 &nbsp;
 
+- Add listings to comparison list.
+- Compare listings based on target price, reviews, amenities, votes, and guest capacity.
 <p align="center">
   <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare1.gif" width="650" />
 </p>
@@ -11,6 +13,7 @@
 &nbsp;
 &nbsp;
 
+- Compare saved listings based on location using Google Maps API.
 <p align="center">
   <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare2.gif" width="650" />
 </p>
@@ -18,6 +21,7 @@
 &nbsp;
 &nbsp;
 
+- Discuss group travel decisions with in-app messaging.
 <p align="center">
   <img src="https://github.com/irentro/Compare-Listings-Module/blob/master/Compare3.gif" width="650" />
 </p>
